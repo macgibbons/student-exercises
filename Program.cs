@@ -6,7 +6,7 @@ namespace StudentExercises
     {
         static void Main (string[] args)
         {
-            // create 4, or more, exercises.
+            // ----------EXERCISES ----------
             Exercise CityPlanner = new Exercise ("C #")
             {
                 Name = "City Planner"
@@ -28,6 +28,23 @@ namespace StudentExercises
                 Name = "React Nutshell"
             };
 
+            // ----------COHORTS----------
+            Cohort C36 = new Cohort
+            {
+                CohortName = "Day Cohort 36"
+            };
+            Cohort C37 = new Cohort
+            {
+                CohortName = "Day Cohort 37"
+            };
+            Cohort C38 = new Cohort
+            {
+                CohortName = "Day Cohort 38"
+            };
+            Cohort C39 = new Cohort
+            {
+                CohortName = "Day Cohort 39"
+            };
         }
     }
 }
