@@ -16,11 +16,13 @@ namespace StudentExercises
             FirstName = firstName;
             LastName = lastName;
             SlackHandle = slackHandle;
+
         }
 
         public void AssignStudentCohort (Cohort cohort, Student student)
         {
             cohort.CohortStudents.Add (student);
+
         }
 
     }

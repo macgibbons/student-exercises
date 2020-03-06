@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace StudentExercises
 {
@@ -55,21 +56,97 @@ namespace StudentExercises
 
             Student Kevin = new Student ("Kevin", "Penny", "KevtheDev");
 
+            // ---------Student enrolment---------
             C37.CohortStudents.Add (Mac);
             C38.CohortStudents.Add (Kurt);
             C39.CohortStudents.Add (Garrett);
             C36.CohortStudents.Add (Kevin);
 
+            // ----------INSTRUCTORS----------
             Instructor Adam = new Instructor ("Adam", "Sheaffer", "adamsheaf", "Angular");
             Instructor Steve = new Instructor ("Steve", "Brownlee", "Chortlehort", "Dad Jokes");
             Instructor Leah = new Instructor ("Leah", "Hoefling", "leah", "Taking Care of Splant");
             Instructor Brenda = new Instructor ("Brenda", "Long", "bjlong", "UX/UI");
 
+            // ----------Instructor Placement -----------
             C37.CohortInstructors.Add (Adam);
             C38.CohortInstructors.Add (Leah);
             C39.CohortInstructors.Add (Steve);
             C36.CohortInstructors.Add (Brenda);
+
+            // ----------Student Assigment----------
+            Adam.AssignStudentExercise (CityPlanner, Mac);
+            Adam.AssignStudentExercise (EyesOnThesky, Mac);
+            Adam.AssignStudentExercise (CityPlanner, Garrett);
+            Adam.AssignStudentExercise (EyesOnThesky, Garrett);
+            Adam.AssignStudentExercise (ReactNutshell, Kurt);
+            Adam.AssignStudentExercise (EyesOnThesky, Kurt);
+            Adam.AssignStudentExercise (Glassdale, Kevin);
+            Adam.AssignStudentExercise (FlexboxFroggy, Kevin);
+
+            Leah.AssignStudentExercise (FlexboxFroggy, Mac);
+            Leah.AssignStudentExercise (Glassdale, Mac);
+            Leah.AssignStudentExercise (FlexboxFroggy, Garrett);
+            Leah.AssignStudentExercise (Glassdale, Garrett);
+            Leah.AssignStudentExercise (CityPlanner, Kurt);
+            Leah.AssignStudentExercise (FlexboxFroggy, Kurt);
+            Leah.AssignStudentExercise (ReactNutshell, Kevin);
+            Leah.AssignStudentExercise (EyesOnThesky, Kevin);
+
+            Steve.AssignStudentExercise (ReactNutshell, Mac);
+            Steve.AssignStudentExercise (FlexboxFroggy, Mac);
+            Steve.AssignStudentExercise (ReactNutshell, Garrett);
+            Steve.AssignStudentExercise (FlexboxFroggy, Garrett);
+            Steve.AssignStudentExercise (ReactNutshell, Kurt);
+            Steve.AssignStudentExercise (EyesOnThesky, Kurt);
+            Steve.AssignStudentExercise (Glassdale, Kevin);
+            Steve.AssignStudentExercise (FlexboxFroggy, Kevin);
+
+            Brenda.AssignStudentExercise (FlexboxFroggy, Mac);
+            Brenda.AssignStudentExercise (Glassdale, Mac);
+            Brenda.AssignStudentExercise (FlexboxFroggy, Garrett);
+            Brenda.AssignStudentExercise (Glassdale, Garrett);
+            Brenda.AssignStudentExercise (CityPlanner, Kurt);
+            Brenda.AssignStudentExercise (FlexboxFroggy, Kurt);
+            Brenda.AssignStudentExercise (ReactNutshell, Kevin);
+            Brenda.AssignStudentExercise (EyesOnThesky, Kevin);
+
+            List<Student> students = new List<Student> ();
+            students.Add (Mac);
+            students.Add (Kevin);
+            students.Add (Garrett);
+            students.Add (Kurt);
+            List<Exercise> exercises = new List<Exercise> ();
+            exercises.Add (EyesOnThesky);
+            exercises.Add (ReactNutshell);
+            exercises.Add (FlexboxFroggy);
+            exercises.Add (Glassdale);
+            exercises.Add (CityPlanner);
+            List<Cohort> cohorts = new List<Cohort> ();
+            cohorts.Add (C37);
+            cohorts.Add (C36);
+            cohorts.Add (C38);
+            cohorts.Add (C39);
+
+            foreach (Cohort cohort in cohorts)
+            {
+                Console.WriteLine ($"********* {cohort.CohortName} *********");
+                Console.WriteLine ("                ");
+                foreach (Student student in cohort.CohortStudents)
+                {
+                    Console.WriteLine ($"{student.FirstName} {student.LastName}");
+                    Console.WriteLine ("--------------");
+
+                    foreach (Exercise exercise in student.StudentsExercises)
+                    {
+                        Console.WriteLine (exercise.Name);
+                    }
+
+                }
+            }
+
         }
+
     }
 }
 
