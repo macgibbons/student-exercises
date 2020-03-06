@@ -10,6 +10,11 @@ namespace StudentExercises
         public string SlackHandle { get; set; }
         public string Cohort { get; set; }
         public List<Exercise> StudentsExercises { get; set; } = new List<Exercise> ();
+
+        // public Car (int milesDriven)
+        // {
+        //     _milesDriven = milesDriven;
+        // }
     }
 }
 
