@@ -59,6 +59,16 @@ namespace StudentExercises
             C38.CohortStudents.Add (Kurt);
             C39.CohortStudents.Add (Garrett);
             C36.CohortStudents.Add (Kevin);
+
+            Instructor Adam = new Instructor ("Adam", "Sheaffer", "adamsheaf", "Angular");
+            Instructor Steve = new Instructor ("Steve", "Brownlee", "Chortlehort", "Dad Jokes");
+            Instructor Leah = new Instructor ("Leah", "Hoefling", "leah", "Taking Care of Splant");
+            Instructor Brenda = new Instructor ("Brenda", "Long", "bjlong", "UX/UI");
+
+            C37.CohortInstructors.Add (Adam);
+            C38.CohortInstructors.Add (Leah);
+            C39.CohortInstructors.Add (Steve);
+            C36.CohortInstructors.Add (Brenda);
         }
     }
 }
