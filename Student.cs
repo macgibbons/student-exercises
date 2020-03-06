@@ -8,13 +8,21 @@ namespace StudentExercises
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string SlackHandle { get; set; }
-        public string Cohort { get; set; }
+        private string _cohort { get; set; }
         public List<Exercise> StudentsExercises { get; set; } = new List<Exercise> ();
 
-        // public Car (int milesDriven)
-        // {
-        //     _milesDriven = milesDriven;
-        // }
+        public Student (string firstName, string lastName, string slackHandle)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            SlackHandle = slackHandle;
+        }
+
+        public void AssignStudentCohort (Cohort cohort, Student student)
+        {
+            cohort.CohortStudents.Add (student);
+        }
+
     }
 }
 

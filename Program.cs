@@ -45,6 +45,20 @@ namespace StudentExercises
             {
                 CohortName = "Day Cohort 39"
             };
+
+            // ----------STUDENTS----------
+            Student Mac = new Student ("Mac", "Gibbons", "macgibbons");
+
+            Student Kurt = new Student ("Kurt", "Krafft", "Kurtster");
+
+            Student Garrett = new Student ("Garret", "Freshwater", "Gfresh69");
+
+            Student Kevin = new Student ("Kevin", "Penny", "KevtheDev");
+
+            C37.CohortStudents.Add (Mac);
+            C38.CohortStudents.Add (Kurt);
+            C39.CohortStudents.Add (Garrett);
+            C36.CohortStudents.Add (Kevin);
         }
     }
 }
