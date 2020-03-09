@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudentExercises
 {
@@ -55,9 +56,15 @@ namespace StudentExercises
             Student Garrett = new Student ("Garret", "Freshwater", "Gfresh69");
 
             Student Kevin = new Student ("Kevin", "Penny", "KevtheDev");
+            Student Audrey = new Student ("Audrey", "Borgra", "KevtheDev");
+            Student Jansen = new Student ("Jansen", "Van der Spuy", "KevtheDev");
+            Student Namita = new Student ("Namita", "Manohor", "KevtheDev");
 
             // ---------Student enrolment---------
             C37.CohortStudents.Add (Mac);
+            C37.CohortStudents.Add (Audrey);
+            C37.CohortStudents.Add (Jansen);
+            C37.CohortStudents.Add (Namita);
             C38.CohortStudents.Add (Kurt);
             C39.CohortStudents.Add (Garrett);
             C36.CohortStudents.Add (Kevin);
@@ -127,6 +134,39 @@ namespace StudentExercises
             cohorts.Add (C36);
             cohorts.Add (C38);
             cohorts.Add (C39);
+            List<Instructor> instructors = new List<Instructor> ()
+            {
+                Leah,
+                Steve,
+                Adam,
+                Brenda
+            };
+
+            var JavascriptExercises = exercises.Where (exercise =>
+            {
+                return exercise.Language == "JavaScript";
+            });
+            Console.WriteLine ("JavaScript Exercises");
+            foreach (Exercise ex in JavascriptExercises)
+            {
+
+                Console.WriteLine (ex.Name);
+
+            }
+
+            var Cohort37Students = cohorts.Where (cohort =>
+            {
+                return cohort == C37;
+
+            }).ToList ();
+
+            foreach (Cohort cohort in Cohort37Students)
+            {
+                foreach (Student student in cohort.CohortStudents)
+                {
+                    Console.WriteLine ($"{student.FirstName} is a student in {cohort.CohortName}");
+                }
+            }
 
             foreach (Cohort cohort in cohorts)
             {
