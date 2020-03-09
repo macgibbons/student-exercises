@@ -8,7 +8,7 @@ namespace StudentExercises
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string SlackHandle { get; set; }
-        private string _cohort { get; set; }
+        public Cohort cohort { get; set; }
         public List<Exercise> StudentsExercises { get; set; } = new List<Exercise> ();
 
         public Student (string firstName, string lastName, string slackHandle)

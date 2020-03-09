@@ -123,6 +123,9 @@ namespace StudentExercises
             students.Add (Kevin);
             students.Add (Garrett);
             students.Add (Kurt);
+            students.Add (Audrey);
+            students.Add (Jansen);
+            students.Add (Namita);
             List<Exercise> exercises = new List<Exercise> ();
             exercises.Add (EyesOnThesky);
             exercises.Add (ReactNutshell);
@@ -146,7 +149,9 @@ namespace StudentExercises
             {
                 return exercise.Language == "JavaScript";
             });
+
             Console.WriteLine ("JavaScript Exercises");
+
             foreach (Exercise ex in JavascriptExercises)
             {
 
@@ -177,6 +182,29 @@ namespace StudentExercises
                 {
                     Console.WriteLine ($"{instruc.FirstName} {instruc.LastName}");
                 }
+            }
+
+            var studentsOrderedByLastName = students.OrderByDescending (s =>
+            {
+                return s.LastName;
+            });
+
+            Console.WriteLine ("* * Students ordered by Decending * *");
+            foreach (var student in studentsOrderedByLastName)
+            {
+                Console.WriteLine ($"{student.FirstName} {student.LastName}");
+            }
+
+            var studentsWithNoExercises = students.Where (student =>
+            {
+                var exercisesCount = student.StudentsExercises.Count;
+                return exercisesCount == 0;
+            });
+
+            Console.WriteLine ("* * Students with No Exercises * *");
+            foreach (var student in studentsWithNoExercises)
+            {
+                Console.WriteLine ($"{student.FirstName} {student.LastName}");
             }
 
             // foreach (Cohort cohort in cohorts)
