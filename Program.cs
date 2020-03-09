@@ -154,36 +154,47 @@ namespace StudentExercises
 
             }
 
-            var Cohort37Students = cohorts.Where (cohort =>
+            var Cohort37 = cohorts.Where (cohort =>
             {
                 return cohort == C37;
 
             }).ToList ();
 
-            foreach (Cohort cohort in Cohort37Students)
+            foreach (Cohort cohort in Cohort37)
             {
-                foreach (Student student in cohort.CohortStudents)
-                {
-                    Console.WriteLine ($"{student.FirstName} is a student in {cohort.CohortName}");
-                }
-            }
+                Console.WriteLine (cohort.CohortName);
+                Console.WriteLine ("--------------");
+                Console.WriteLine ("****Students****");
 
-            foreach (Cohort cohort in cohorts)
-            {
-                Console.WriteLine ($"********* {cohort.CohortName} *********");
-                Console.WriteLine ("                ");
                 foreach (Student student in cohort.CohortStudents)
                 {
                     Console.WriteLine ($"{student.FirstName} {student.LastName}");
-                    Console.WriteLine ("--------------");
+                }
 
-                    foreach (Exercise exercise in student.StudentsExercises)
-                    {
-                        Console.WriteLine (exercise.Name);
-                    }
-
+                Console.WriteLine ("                ");
+                Console.WriteLine ("****Instructors****");
+                foreach (Instructor instruc in cohort.CohortInstructors)
+                {
+                    Console.WriteLine ($"{instruc.FirstName} {instruc.LastName}");
                 }
             }
+
+            // foreach (Cohort cohort in cohorts)
+            // {
+            //     Console.WriteLine ($"********* {cohort.CohortName} *********");
+            //     Console.WriteLine ("                ");
+            //     foreach (Student student in cohort.CohortStudents)
+            //     {
+            //         Console.WriteLine ($"{student.FirstName} {student.LastName}");
+            //         Console.WriteLine ("--------------");
+
+            //         foreach (Exercise exercise in student.StudentsExercises)
+            //         {
+            //             Console.WriteLine (exercise.Name);
+            //         }
+
+            //     }
+            // }
 
         }
 
